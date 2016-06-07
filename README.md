@@ -6,6 +6,28 @@
 
 The game of Black Jack is one of luck and risk. 
 
+### To accomplish the basic function of the Black Jack game, I will need to consider the following:
+
+- An input field for the user to enter their name
+- A field to demonstrate their balance. User will start with $100 by default.
+- A field to demonstrate the points they have during a game.
+- A field to demonstrate the points the dealer has accrued during the game.
+- The game will need to utilize 52 cards, stored in arrays for the game to pull randomly during a round.
+- A button to start the game and place two cards on the table for the player and the dealer.
+- A button to allow the user to "stand" or no longer accept new cards.
+- A button to allow the user to "hit" or accept another card.
+- A button for the user to bet more money. Each new game will deduct $10 from the user's balance. If the user selects the   "bet" button, the the program should deduct $10 from their balance and display the current pot on the screen.
+- If the user selects the "hit" button, the points field should check the player's current hand and update the points based on the new sum.
+
+#### Possible winning scenarios.
+
+- An if statement may need to be used to monitor each players hand. If the player's hand reaches 21, then the player wins,   otherwise the game should continue.
+- If the dealer's hand reaches 21, then the dealer wins, otherwise the game should continue.
+- If the player's points and the dealer's points are the same, then the screen should display a tie. Otherwise the game      should continue.
+- If either user goes over 21, then that user loses. Otherwise the game should continue.
+- The user with the highest score (still under 21) at the end of a game wins.
+- The dealer should continue to deal itself a card until they at least reach 17 points.
+
 ## Code Example
 
 Show what the library does as concisely as possible, developers should be able to figure out how your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
