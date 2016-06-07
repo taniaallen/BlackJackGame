@@ -46,6 +46,8 @@ Provide code examples and explanations of how to get the project.
 
 ## API Reference
 
+####Boardgame pack v2 by Kenney Vleugels (www.kenney.nl)
+
 JQuery will be utilized for the interactive functionality of the program.
 
 
