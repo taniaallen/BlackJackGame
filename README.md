@@ -6,7 +6,7 @@
 
 The game of Black Jack is one of luck and risk. 
 
-### To accomplish the basic function of the Black Jack game, I will need to consider the following:
+#### To accomplish the basic function of the Black Jack game, the following will be considered:
 
 - An input field for the user to enter their name
 - A field to demonstrate their balance. User will start with $100 by default.
@@ -42,4 +42,6 @@ Provide code examples and explanations of how to get the project.
 
 ## API Reference
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+JQuery will be utilized for the interactive functionality of the program.
+
+
