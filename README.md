@@ -1,5 +1,6 @@
 # The Game of Black Jack
 
+![alt=wireframe](https://github.com/taniaallen/BlackJackGame/blob/master/blackjack_wireframe.jpg)
 
 ## Synopsis
 
