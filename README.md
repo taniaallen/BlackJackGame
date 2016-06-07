@@ -4,7 +4,11 @@
 
 ## Synopsis
 
-The game of Black Jack is one of luck and risk. 
+The game of Black Jack is one of luck and risk. The object of the game, as described by [Wikipedia](https://en.wikipedia.org/wiki/Blackjack), is to beat the dealer in one of the following ways:
+
+> - Get 21 points on the player's first two cards (called a "blackjack" or "natural"), without a dealer blackjack;
+> - Reach a final score higher than the dealer without exceeding 21; or
+> - Let the dealer draw additional cards until his or her hand exceeds 21.
 
 #### To accomplish the basic function of the Black Jack game, the following will be considered:
 
