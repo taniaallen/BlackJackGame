@@ -1,7 +1,7 @@
 /* Basic layout styling */
 
 body {
-	background-image: url("../assets/images/blackjack_table.png");
+	background-image: url("../images/blackjack_table.png");
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-position: cover;
