@@ -16,7 +16,7 @@ var deck = [
 ];
 
 // Variable for random numbering
-var randomNumber = Math.random()
+var randomNumber = Math.random();
 
 // Variables for the pot, betting and player balance
 var $pot = $('.pot');
