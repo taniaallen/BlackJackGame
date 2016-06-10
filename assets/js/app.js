@@ -9,30 +9,24 @@ $(document).ready(function() {
 	$bet.on('click', betClicked);
 })
 
-<<<<<<< HEAD
-=======
+
 // Array of the card strings
->>>>>>> master
+
 var deck = [
 	['cardClubs2.png', 'cardClubs3.png', 'cardClubs4.png', 'cardClubs5.png', 'cardClubs6.png', 'cardClubs7.png', 'cardClubs8.png', 'cardClubs9.png', 'cardClubs10.png', 'cardClubsA.png', 'cardClubsJ.png', 'cardClubsK.png', 'cardClubsQ.png'],
 	['cardDiamonds2.png', 'cardDiamonds3.png', 'cardDiamonds4.png', 'cardDiamonds5.png', 'cardDiamonds6.png', 'cardDiamonds7.png', 'cardDiamonds8.png', 'cardDiamonds9.png', 'cardDiamonds10.png', 'cardDiamondsA.png', 'cardDiamondsJ.png', 'cardDiamondsK.png', 'cardDiamondsQ.png']	
 ];
 
-<<<<<<< HEAD
-=======
+
 // Variable for random numbering
 var randomNumber = Math.random();
 
 // Variables for the pot, betting and player balance
->>>>>>> master
+
 var $pot = $('.pot');
 var potBalance = 0;
 var $balance = $('.player-balance');
 var balanceNumber = 100.00;
-<<<<<<< HEAD
-console.log(balanceNumber);
-=======
->>>>>>> master
 var $bet = $('#bet');
 
 function betClicked() {
