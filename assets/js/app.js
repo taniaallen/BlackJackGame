@@ -51,15 +51,18 @@ function dealCards() {  // function to determine how many cards to deal and who 
 	var faceDown = getCard();
 		// console.log('Dealer face down: ' + faceDown);
 		// $('.dealer-hand').append('<img class="face-down" src="assets/images/boardgamepack/PNG/Cards/cardBack_blue2.png"/>');   <= generated the card but did not follow styling set
- 
+ 	var faceDownImage = $('<img>').attr('src', 'assets/images/boardgamepack/PNG/Cards/cardBack_blue2.png');
+ 	$('.dealer-hand').append(faceDownImage);
+
+ 	//  *********** Need to add the value of the card as an attribute to the image
+
 	// player one gets a face up card
 	var playerCard = getCard();
 
 	if(playerCard === faceDown) {
 		playerCard = getCard();
 	};
-	
-
+		generatePlayerCards(playerCard);
 		// console.log('player card: ' + playerCard);
 	
 	// dealer gets a face up card
@@ -67,6 +70,7 @@ function dealCards() {  // function to determine how many cards to deal and who 
 	if(faceUp === faceDown || faceUp === playerCard) {
 		faceUp = getCard();
 	};
+		generateDealerCards(faceUp);
 		// console.log('face up: ' + faceUp);
 	
 	// player one gets last face up card
@@ -74,8 +78,9 @@ function dealCards() {  // function to determine how many cards to deal and who 
 	if(playerCard2 === faceDown || playerCard2 === faceUp || playerCard2 === playerCard) {
 		playerCard2 = getCard();
 	};
+		generatePlayerCards(playerCard2);
 		// console.log('player Card 2: ' + playerCard2)
-
+	
 }
 
 
@@ -89,8 +94,15 @@ function getCard() {    // function to create and return a card when invoked
 	return card;
 }
 
-function generateCards() {
-	
+function generateDealerCards(card) {  // Create a function that generates the image tag for the card 
+	var cardImage = $('<img>').attr('src', 'assets/images/boardgamepack/PNG/Cards/' + card);
+	$('.dealer-hand').append(cardImage);
+
+};
+
+function generatePlayerCards(card) {
+	var cardImage = $('<img>').attr('src', 'assets/images/boardgamepack/PNG/Cards/' + card);
+	$('.player-hand').append(cardImage);
 }
 
 
