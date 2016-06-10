@@ -80,9 +80,15 @@ function dealCards() {  // function to determine how many cards to deal and who 
 	};
 		generatePlayerCards(playerCard2);
 		// console.log('player Card 2: ' + playerCard2)
+	// $('button').off('#bet');  attempted to prevent the button from being clicked but syntax may not be right
 	
+
+
 }
 
+var $hit = $('#hit');  // if the player clicks the hit button, generate a new card
+
+$hit.on('click', hitClicked); 
 
 
 function getCard() {    // function to create and return a card when invoked
@@ -103,6 +109,13 @@ function generateDealerCards(card) {  // Create a function that generates the im
 function generatePlayerCards(card) {
 	var cardImage = $('<img>').attr('src', 'assets/images/boardgamepack/PNG/Cards/' + card);
 	$('.player-hand').append(cardImage);
+}
+
+function hitClicked() {
+	var hitCard = getCard();
+	// console.log(hitCard);
+	generatePlayerCards(hitCard);
+
 }
 
 
