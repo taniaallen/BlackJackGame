@@ -12,14 +12,9 @@ $(document).ready(function() {
 
 // Array of the card strings
 
-var deck = [
-	['cardClubs2.png', 'cardClubs3.png', 'cardClubs4.png', 'cardClubs5.png', 'cardClubs6.png', 'cardClubs7.png', 'cardClubs8.png', 'cardClubs9.png', 'cardClubs10.png', 'cardClubsA.png', 'cardClubsJ.png', 'cardClubsK.png', 'cardClubsQ.png'],
-	['cardDiamonds2.png', 'cardDiamonds3.png', 'cardDiamonds4.png', 'cardDiamonds5.png', 'cardDiamonds6.png', 'cardDiamonds7.png', 'cardDiamonds8.png', 'cardDiamonds9.png', 'cardDiamonds10.png', 'cardDiamondsA.png', 'cardDiamondsJ.png', 'cardDiamondsK.png', 'cardDiamondsQ.png']	
-];
+var deck = ['cardClubs2.png', 'cardClubs3.png', 'cardClubs4.png', 'cardClubs5.png', 'cardClubs6.png', 'cardClubs7.png', 'cardClubs8.png', 'cardClubs9.png', 'cardClubs10.png', 'cardClubsA.png', 'cardClubsJ.png', 'cardClubsK.png', 'cardClubsQ.png', 'cardDiamonds2.png', 'cardDiamonds3.png', 'cardDiamonds4.png', 'cardDiamonds5.png', 'cardDiamonds6.png', 'cardDiamonds7.png', 'cardDiamonds8.png', 'cardDiamonds9.png', 'cardDiamonds10.png', 'cardDiamondsA.png', 'cardDiamondsJ.png', 'cardDiamondsK.png', 'cardDiamondsQ.png'];
 
 
-// Variable for random numbering
-var randomNumber = Math.random();
 
 // Variables for the pot, betting and player balance
 
@@ -28,6 +23,7 @@ var potBalance = 0;
 var $balance = $('.player-balance');
 var balanceNumber = 100.00;
 var $bet = $('#bet');
+var playerTurn = false;
 
 function betClicked() {
 	console.log('bet button clicked');
@@ -46,9 +42,60 @@ function betClicked() {
 		$pot.text(potBalance);
 	}
 
+	dealCards();
+	
+}
 
+function dealCards() {  // function to determine how many cards to deal and who to deal them to in the game
+	// when invoked, dealer gets a face down card
+	var faceDown = getCard();
+		// console.log('Dealer face down: ' + faceDown);
+		// $('.dealer-hand').append('<img class="face-down" src="assets/images/boardgamepack/PNG/Cards/cardBack_blue2.png"/>');   <= generated the card but did not follow styling set
+ 
+	// player one gets a face up card
+	var playerCard = getCard();
 
+	if(playerCard === faceDown) {
+		playerCard = getCard();
+	};
 	
 
-	// two cards should randomly generate for the player and dealer
+		// console.log('player card: ' + playerCard);
+	
+	// dealer gets a face up card
+	var faceUp = getCard();
+	if(faceUp === faceDown || faceUp === playerCard) {
+		faceUp = getCard();
+	};
+		// console.log('face up: ' + faceUp);
+	
+	// player one gets last face up card
+	var playerCard2 = getCard();
+	if(playerCard2 === faceDown || playerCard2 === faceUp || playerCard2 === playerCard) {
+		playerCard2 = getCard();
+	};
+		// console.log('player Card 2: ' + playerCard2)
+
 }
+
+
+
+function getCard() {    // function to create and return a card when invoked
+	// Variable for random numbering
+	var randomNumber =  Math.floor(Math.random() * 26);
+	// pop item out of array?
+	//return random card
+	var card = deck[randomNumber];
+	return card;
+}
+
+function generateCards() {
+	
+}
+
+
+
+
+
+
+
