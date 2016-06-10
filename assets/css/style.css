@@ -65,6 +65,9 @@ h3 {
 
 .buttons {
 	float: right;
-	margin: 17%;
+	position: absolute;
+	top: 75%;
+	left: 80%;
+	font-size: 30px;
 }
 
