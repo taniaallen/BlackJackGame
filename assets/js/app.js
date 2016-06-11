@@ -80,6 +80,7 @@ var dealerPoints = 0;
 
 function betClicked() {
 	console.log('bet button clicked');
+	$('.message').text('');
 
 	// 10.00 should be placed in the pot
 	if (balanceNumber === 0) {
@@ -119,20 +120,12 @@ function dealCards() {  // function to determine how many cards to deal and who 
 
 	// player one gets a face up card
 	var playerCard = getCard();
-	
 	generatePlayerCards(playerCard);
 
 	var dealerCard = getCard();
-
 	generateDealerCards(dealerCard);
 
-	$('button').off('#bet');  // attempted to prevent the button from being clicked but syntax may not be right
 }
-
-
-
-
-
 
 
 
@@ -200,12 +193,51 @@ function checkPoints() {
 		$hit.prop('disabled', false);
 	} else if (playerPoints > 21){
 		$hit.prop('disabled', true);
-		alert('You drew ' + playerPoints + "  Bust!!!");
+		$('.message').text('You drew ' + playerPoints + "  Bust!!!");
+		potBalance = 0;
+		$pot.text(potBalance);
+		$(".player-points").text(potBalance);
+		playerPoints = 0;
+		resetTable();
+
+	} else if (playerPoints === 21) {
+		$hit.prop('disabled', true);
+		$('.message').text('You drew ' + playerPoints + "  You Win!!!");
+		$balance += 10;
+		potBalance = 0;
+		$pot.text(potBalance);
+		$(".player-points").text(potBalance);
+		playerPoints = 0;
+		resetTable();
 	}
+
 }
 
 
+function resetTable() {
+	$('.dealer-hand img').remove();
+	$('.player-hand img').remove();
+	
+	$bet.prop('disabled', false);
 
+}
+
+
+// When the stand button is clicked:
+
+var $stand = $('#stand');
+
+$stand.on('click', dealerTurn);
+
+
+function dealerTurn() {
+	$hit.prop('disabled', true);
+	$bet.prop('disabled', true);
+	$stand.prop('disabled', true);
+
+	
+
+}
 
 
 
