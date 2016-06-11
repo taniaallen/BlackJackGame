@@ -1,5 +1,6 @@
 $(document).ready(function() {
-	console.log('loaded');
+	$hit.prop('disabled', true);
+
 	var $balance = $('.player-balance');
 	var $bet = $('#bet');
 	// console.log($bet);
@@ -96,8 +97,10 @@ function betClicked() {
 	}
 
 	dealCards();
+	$bet.prop('disabled', true);
 
-	
+	$hit.prop('disabled', false);
+
 }
 
 function dealCards() {  // function to determine how many cards to deal and who to deal them to in the game
@@ -183,10 +186,22 @@ function cardValue(key) {
 function hitClicked() {
 	var hitCard = getCard();
 	// console.log(hitCard);
+
+	//generate cards for player when they select the 'hit' button
 	generatePlayerCards(hitCard);
+	checkPoints();
+}
 
-	
 
+function checkPoints() {
+	// console.log('player points at the check function: ' + playerPoints);
+
+	if(playerPoints < 21) {
+		$hit.prop('disabled', false);
+	} else if (playerPoints > 21){
+		$hit.prop('disabled', true);
+		alert('You drew ' + playerPoints + "  Bust!!!");
+	}
 }
 
 
