@@ -79,10 +79,14 @@ function dealCards() {  // function to determine how many cards to deal and who 
 
 	// player one gets a face up card
 	var playerCard = getCard();
-	generatePlayerCards(playerCard);
+	setTimeout(function() {
+		generatePlayerCards(playerCard);
+	}, 500);
 
 	var dealerCard = getCard();
-	generateDealerCards(dealerCard);
+	setTimeout(function() {
+		generateDealerCards(playerCard);
+	}, 1000);
 
 }
 
@@ -147,8 +151,11 @@ function hitClicked() {
 	// console.log(hitCard);
 
 	//generate cards for player when they select the 'hit' button
-	generatePlayerCards(hitCard);
-	checkPoints();
+	setTimeout(function() {
+		generatePlayerCards(hitCard);
+		checkPoints();
+	}, 500);
+	
 }
 
 
@@ -159,12 +166,14 @@ function checkPoints() {
 		$hit.prop('disabled', false);
 	} else if (playerPoints > 21){
 		$hit.prop('disabled', true);
-		$('.message').text('You drew ' + playerPoints + "  Bust!!!");
+		$('.message').text('You drew ' + playerPoints + ", you bust!!!");
 		potBalance = 0;
 		$pot.text(potBalance);
 		$(".player-points").text(potBalance);
 		playerPoints = 0;
-		resetTable();
+		setTimeout(function() {
+			resetTable();
+		}, 1500);
 
 	} else if (playerPoints === 21) {
 		$hit.prop('disabled', true);
@@ -175,20 +184,14 @@ function checkPoints() {
 		$pot.text(potBalance);
 		$(".player-points").text(potBalance);
 		playerPoints = 0;
-		resetTable();
+		setTimeout(function() {
+			resetTable();
+		}, 1500);
 	}
 
 }
 
 
-function resetTable() {
-	$('.dealer-hand img').remove();
-	$('.player-hand img').remove();
-	
-	$bet.prop('disabled', false);
-	$stand.prop('disabled', false);
-
-}
 
 
 // When the stand button is clicked:
@@ -206,6 +209,7 @@ function dealerTurn() {
 	if(dealerPoints < 17) {
 		var dealerCard = getCard();
 		generateDealerCards(dealerCard);
+		
 		// Account for the Aces in the dealer's turn similar to line 131
 		if(dealerCard.value === 11 && (dealerPoints + 11) > 21) {
 			dealerCard.value = 1;
@@ -233,12 +237,24 @@ function dealerTurn() {
 		playerPoints = 0;
 		$(".player-points").text(potBalance);
 		dealerPoints = 0;
-		resetTable();
+		setTimeout(function() {
+			resetTable();
+		}, 1500);
 	}
 
 	
 
 	
+}
+
+
+function resetTable() {
+	$('.dealer-hand img').remove();
+	$('.player-hand img').remove();
+	
+	$bet.prop('disabled', false);
+	$stand.prop('disabled', false);
+
 }
 
 
