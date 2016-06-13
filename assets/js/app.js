@@ -37,7 +37,9 @@ function betClicked() {
 
 	// 10.00 should be placed in the pot
 	if (balanceNumber === 0) {
-		alert('you have no more funds to play!');
+		$('.message').text('You have no more funds to play!');
+		resetTable();
+		resetDeck();
 	} else {
 		// 10.00 should be deducted from the player's balance
 		balanceNumber -= 10;
@@ -171,6 +173,8 @@ function checkPoints() {
 		$pot.text(potBalance);
 		$(".player-points").text(potBalance);
 		playerPoints = 0;
+		dealerPoints = 0;
+		$('.dealer-points').text(dealerPoints);
 		setTimeout(function() {
 			resetTable();
 		}, 1500);
@@ -472,7 +476,9 @@ function resetDeck() {
 
 }
 
-
+// Areas that could be refactored
+// a function for clearing points
+// a function for clearing text
 
 
 
