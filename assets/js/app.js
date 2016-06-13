@@ -87,9 +87,14 @@ function dealCards() {  // function to determine how many cards to deal and who 
 
 	var dealerCard = getCard();
 	setTimeout(function() {
-		generateDealerCards(playerCard);
+		generateDealerCards(dealerCard);
 	}, 1000);
 
+
+	var playerCard2 = getCard();
+	setTimeout(function() {
+		generatePlayerCards(playerCard2);
+	}, 1500);
 }
 
 
