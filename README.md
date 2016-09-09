@@ -32,9 +32,7 @@ The game of Black Jack is one of luck and risk. The object of the game, as descr
 - The user with the highest score (still under 21) at the end of a game wins.
 - The dealer should continue to deal itself a card until they at least reach 17 points.
 
-## Code Example
 
-Show what the library does as concisely as possible, developers should be able to figure out how your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
 
 ## Motivation
 
@@ -42,12 +40,11 @@ Black Jack is a fun game. I chose to try my hand at building this game from scra
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
+Go to (http://www.taniaallen.me/BlackJackGame/) to try out my Black Jack game!
 
-## API Reference
 
 ####Boardgame pack v2 by Kenney Vleugels (www.kenney.nl)
 
-JQuery will be utilized for the interactive functionality of the program.
+JQuery will is utilized for the interactive functionality of the program.
 
 
